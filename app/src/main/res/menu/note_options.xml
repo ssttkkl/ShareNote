@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/edit"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="@string/edit"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/create_invite"
+        android:title="@string/action_create_invite" />
+    <item
+        android:id="@+id/create_invite_readonly"
+        android:title="@string/action_create_invite_readonly" />
+    <item
+        android:id="@+id/permission_manage"
+        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="@string/note_permission_manage"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/remove"
+        android:icon="@drawable/ic_baseline_delete_24"
+        android:title="@string/remove" />
+</menu>

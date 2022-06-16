@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="me.ssttkkl.sharenote.ui.home.HomeFragment"
+        android:label=""
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_note_detail"
+            app:destination="@id/nav_note_detail" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_note_edit"
+            app:destination="@id/nav_graph_note_edit" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_login"
+            app:destination="@id/nav_login" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_create_invite"
+            app:destination="@id/nav_create_invite" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_note_permission"
+            app:destination="@id/nav_note_permission" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_note_detail"
+        android:name="me.ssttkkl.sharenote.ui.notedetail.NoteDetailFragment"
+        android:label=""
+        tools:layout="@layout/fragment_note_detail">
+        <argument
+            android:name="noteID"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_nav_note_detail_to_nav_note_edit"
+            app:destination="@id/nav_graph_note_edit" />
+        <action
+            android:id="@+id/action_nav_note_detail_to_nav_create_invite"
+            app:destination="@id/nav_create_invite" />
+        <action
+            android:id="@+id/action_nav_note_detail_to_nav_note_permission"
+            app:destination="@id/nav_note_permission" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_login"
+        android:name="me.ssttkkl.sharenote.ui.login.LoginFragment"
+        android:label="@string/label_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_nav_login_to_nav_register"
+            app:destination="@id/nav_register" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_create_invite"
+        android:name="me.ssttkkl.sharenote.ui.createinvite.CreateInviteFragment"
+        android:label="@string/label_note_invite"
+        tools:layout="@layout/fragment_create_invite">
+        <argument
+            android:name="noteID"
+            app:argType="integer" />
+        <argument
+            android:name="readonly"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_register"
+        android:name="me.ssttkkl.sharenote.ui.login.RegisterFragment"
+        android:label="@string/label_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/nav_note_permission"
+        android:name="me.ssttkkl.sharenote.ui.notepermission.NotePermissionFragment"
+        android:label="@string/label_note_permission"
+        tools:layout="@layout/fragment_note_permission" />
+    <navigation
+        android:id="@+id/nav_graph_note_edit"
+        app:startDestination="@id/nav_note_edit">
+        <fragment
+            android:id="@+id/nav_note_edit"
+            android:name="me.ssttkkl.sharenote.ui.noteedit.NoteEditFragment"
+            android:label=""
+            tools:layout="@layout/fragment_note_edit">
+            <argument
+                android:name="noteID"
+                app:argType="integer" />
+            <action
+                android:id="@+id/action_nav_note_edit_to_nav_draft"
+                app:destination="@id/nav_draft" />
+        </fragment>
+        <fragment
+            android:id="@+id/nav_draft"
+            android:name="me.ssttkkl.sharenote.ui.noteedit.draft.DraftFragment"
+            android:label="@string/label_draft"
+            tools:layout="@layout/fragment_note_draft" />
+    </navigation>
+</navigation>
